@@ -17,11 +17,11 @@ services:
       - REGION=eu-west-1
     build:
       context: .
-    ports:
-      - '5000:5000'
 
   pyroscope:
     image: pyroscope/pyroscope
+    environment:
+      - PYROSCOPE_LOG_LEVEL=debug
     ports:
       - '4040:4040'
     command:
